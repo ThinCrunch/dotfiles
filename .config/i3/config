@@ -197,7 +197,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # Launch polybar
-exec_always bash ~/.config/polybar/launch.sh --forest
+exec_always pkill polybar; polybar
 
 # Media player controls
 bindsym $mod+Shift+i exec playerctl play-pause
@@ -230,7 +230,8 @@ bindsym $mod+Shift+semicolon exec i3lock -c 00000033 \
     --wrong-size=15 --insidewrong-color=00000000 --ringwrong-color=e75552ff --noinput-text=""
 
 # Wallpaper setting
-exec_always feh --bg-fill ~/Pictures/Wallpapers/eclipse.png
+exec_always feh --bg-fill ~/Pictures/Wallpapers/alena-aenami-witcher-1k.jpg
+#exec_always feh --bg-fill ~/Pictures/Wallpapers/eclipse.png
 #exec_always feh --bg-fill ~/Pictures/Wallpapers/spookyscary.png
 
 # Compositor
@@ -314,3 +315,4 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 
 # gammastep applet
 exec gammastep-indicator
+
