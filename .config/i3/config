@@ -264,16 +264,18 @@ client.focused #4c7899 #285577 #ffffff #2e9ef4 #ff6d00
 # Notification daemon
 exec --no-startup-id dunst
 
-# Screenshot tool
-exec flameshot
-bindsym $mod+Shift+s exec flameshot gui
-
 # Set keyboard layouts
-exec_always --no-startup-id setxkbmap \
+ exec_always --no-startup-id setxkbmap \
     -layout 'us,us' \
     -variant ',intl' \
     -option grp:alt_shift_toggle \
-    -option caps:swapescape
+
+# swapping esc and caps is done with keyd now
+# /etc/keyd/default.conf
+
+# Screenshot tool
+exec flameshot
+bindsym $mod+Shift+s exec flameshot gui
 
 # Enable touchpad tap to click
 exec xinput set-prop "ELAN1201:00 04F3:3098 Touchpad" "libinput Tapping Enabled" 1
