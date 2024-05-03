@@ -33,6 +33,8 @@ plugins = {'navarasu/onedark.nvim',
         'lukas-reineke/indent-blankline.nvim',
         'nvim-tree/nvim-tree.lua',
         'nvim-tree/nvim-web-devicons',
+        'SirVer/ultisnips',
+        'lervag/vimtex',
         {'neoclide/coc.nvim', branch = 'release'},
         {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'}}
 
@@ -47,17 +49,19 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
-    disable = { "c", "rust" },
-    disable = function(lang, buf)
-        local max_filesize = 100 * 1024 -- 100 KB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-            return true
-        end
-    end,
-    additional_vim_regex_highlighting = false,
+    disable = { "latex", "rust" },
+    additional_vim_regex_highlighting = { "latex", "markdown" },
   },
 }
+
+-- Snippets
+vim.g.UltiSnipsExpandTrigger = "<tab>"
+-- Set UltiSnips jump forward trigger to <c-b>
+vim.g.UltiSnipsJumpForwardTrigger = "<c-b>"
+-- Set UltiSnips jump backward trigger to <c-z>
+vim.g.UltiSnipsJumpBackwardTrigger = "<c-z>"
+
+vim.g.vimtex_view_method = 'sioyek'
 
 -- Colors
 require("onedark").load()
