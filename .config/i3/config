@@ -221,7 +221,7 @@ bindsym XF86AudioMute exec pamixer --toggle-mute
 # bindsym $mod+Shift+semicolon exec i3lock-fancy-multimonitor -b=0x8 -n
 bindsym $mod+Shift+semicolon exec i3lock -c 00000033 \
     --screen=1 --force-clock --indicator \
-    --radius 15 --ring-width 4 --ring-color=42a5f5ff \
+    --radius 15 --ring-width 4 --ring-color=eeeeff \
     --line-color 00000000 --inside-color=00000000 \
     --keyhl-color=06467aff --bshl-color=ffffffaa --time-color=ffffffff \
     --date-color=ffffff --date-str="%e. %B %Y" --time-pos="ix:iy-65" --time-size=80 \
