@@ -241,8 +241,11 @@ exec_always picom &
 # Gaps
 exec_always i3-msg gaps inner all set 12
 
-# Touchpad scroll
+# Touchpad
+# scrolling
 exec --no-startup-id synclient NaturalScrolling=0 VertScrollDelta=-113
+# tap to click
+exec xinput set-prop "ELAN1201:00 04F3:3098 Touchpad" "libinput Tapping Enabled" 1
 
 # Mouse settings
 exec_always xinput --set-prop "Cooler Master Technology Inc. MM711 Gaming Mouse" 'libinput Accel Speed' -0.8
@@ -277,9 +280,6 @@ exec --no-startup-id dunst
 # Screenshot tool
 exec flameshot
 bindsym $mod+Shift+s exec flameshot gui
-
-# Enable touchpad tap to click
-exec xinput set-prop "ELAN1201:00 04F3:3098 Touchpad" "libinput Tapping Enabled" 1
 
 # Updates notification
 exec_always arch-update --check
@@ -316,6 +316,7 @@ exec asusctl --kbd-bright off
 
 for_window [class="Yad" title="yad-calendar"] floating enable
 
-# gammastep applet
+# tray icons
 exec gammastep-indicator
+exec firewall-applet
 
