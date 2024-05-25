@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background-color: rgba(255, 255, 255, 0.0);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -33,8 +33,7 @@ button {
   transition: none; /* Disable predefined animations */
 }
 #workspaces {
-  margin-top: 6px;
-  background-color: rgba(0,0,0,0.6);
+  background-color: transparent;
   border-radius: 3px;
 }
 
@@ -68,7 +67,6 @@ button {
 #idle_inhibitor,
 
 #window {
-    margin-top: 6px;
       background-color: rgba(0,0,0,0.6);
   padding: 0px 5px;
   border-radius: 3px;
@@ -90,30 +88,28 @@ button {
 }
 
 #custom-hyprlock {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
   padding-right: 6px;
   padding-left: 5px;
   border-radius: 3px;
-  margin-top: 6px;
 }
 
 #custom-todoist {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
   padding-right: 6px;
   padding-left: 5px;
   border-radius: 3px;
-  margin-top: 6px;
 }
 
 #battery {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
   padding-left: 5px;
   padding-right: 9px;
   border-radius: 3px;
 }
 
 #battery.charging, #battery.plugged {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
   padding-left: 5px;
   padding-right: 7px;
   border-radius: 3px;
@@ -121,7 +117,7 @@ button {
 
 @keyframes blink {
   to {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.0);
     color: #000000;
     padding: 0px 5px;
   border-radius: 3px;
@@ -129,7 +125,7 @@ button {
 }
 
 #battery.critical:not(.charging) {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -141,23 +137,23 @@ button {
 }
 
 label:focus {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
 }
 
 #network.disconnected {
-  background-color: rgba(255,0,0,0.6);
+  background-color: rgba(255,0,0,0.0);
   padding: 0px 5px;
   border-radius: 3px;
 }
 
 #pulseaudio.muted {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
   padding: 0px 5px;
   border-radius: 3px;
 }
 
 #temperature.critical {
-  background-color: rgba(255,0,0,0.6);
+  background-color: rgba(255,0,0,0.0);
   padding: 0px 5px;
   border-radius: 3px;
 }
@@ -170,7 +166,7 @@ label:focus {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.0);
   border-radius: 3px;
 }
 
