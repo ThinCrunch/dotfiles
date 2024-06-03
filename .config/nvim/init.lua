@@ -61,7 +61,7 @@ vim.g.UltiSnipsJumpForwardTrigger = "<c-b>"
 -- Set UltiSnips jump backward trigger to <c-z>
 vim.g.UltiSnipsJumpBackwardTrigger = "<c-z>"
 
-vim.g.vimtex_view_method = 'sioyek'
+vim.g.vimtex_view_method = 'zathura'
 
 -- Colors
 require("onedark").load()
