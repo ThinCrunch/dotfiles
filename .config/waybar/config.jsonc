@@ -1,0 +1,103 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 16,
+    "spacing": 0,
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "passthrough": false,
+    "fixed-center": true,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "custom/todoist", "pulseaudio", "network", "backlight", "battery", "custom/power"],
+
+    "tray": {
+        "show-passive-items": true,
+        "spacing": 10
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "adapter": "ADP0",
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "max-length": 20,
+        "format": "{icon}{capacity}%",
+        "format-warning": "{icon}{capacity}%",
+        "format-critical": "{icon}{capacity}%",
+        "format-charging": "<span foreground='#26ff55'> {capacity} %</span>",
+        "format-plugged": "<span foreground='#26ff55'>  {capacity}%</span>",
+        "format-alt": "{icon} {time}",
+        "format-full": "<span foreground='#26ff55'> {capacity} %</span>",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "clock": {
+        "format": "<span color='#6bfffd'> </span>{:%I:%M %p}",
+        "format-alt": "<span color='#ff9854'> </span>{:%a %b %d}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "interval": 1
+    },
+
+    "memory": {
+        "format": "  {used:0.2f}G"
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈁{ipaddr}/{cidr}  ",
+        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-linked": "NET {ifname} (No IP)  ",
+        "format-disconnected": "Disconnected",
+        "format-alt": "NET {ifname}: {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "  muted",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" ", " ", " "]
+            },
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "custom/logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/sep": {
+        "format": "|",
+        "tooltip": false
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout -p layer-shell &",
+        "format": " "
+    },
+     "custom/todoist": {
+         "interval": 60,
+         "exec": "python3 -u ~/Documents/Code/Python/todoist_bar_module/todoist_bar_module.py",
+         "format": " {}",
+         "on-click": "xdg-open https://www.todoist.com"
+    }
+}
