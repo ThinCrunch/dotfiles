@@ -318,5 +318,5 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 
 # tray icons
 exec gammastep-indicator
-exec firewall-applet
+exec sleep 1; firewall-applet
 
