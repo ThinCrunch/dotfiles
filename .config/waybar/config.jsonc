@@ -1,23 +1,43 @@
+// waybar(5)
 {
     "layer": "top",
     "position": "top",
     "height": 16,
     "spacing": 0,
     "exclusive": true,
-    "gtk-layer-shell": true,
+    "gtk-layer-shell": false,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["tray", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "custom/todoist", "pulseaudio", "network", "backlight", "battery", "custom/power"],
+    "modules-right": ["custom/todoist", "pulseaudio", "network", "backlight", "battery", "custom/power"],
 
     "tray": {
         "show-passive-items": true,
         "spacing": 10
     },
 
+    // waybar-hyprland-workspaces(5)
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "warp-on-scroll": false,
+         "show-special": false,
+         "all-outputs": false,
+         "active-only": false,
+         "move-to-monitor": false,
+         "sort-by": [],
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+         },
+     },
+
     "battery": {
-        "bat": "BAT1",
         "adapter": "ADP0",
         "interval": 1,
         "states": {
@@ -36,8 +56,8 @@
     },
 
     "clock": {
-        "format": "<span color='#6bfffd'> </span>{:%I:%M %p}",
-        "format-alt": "<span color='#ff9854'> </span>{:%a %b %d}",
+        "format": "<span color='#ffffff'> </span>{:%I:%M %p}",
+        "format-alt": "<span color='#ffffff'> </span>{:%a %b %d}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
