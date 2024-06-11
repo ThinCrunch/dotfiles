@@ -2,7 +2,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 16,
+    "height": 34,
     "spacing": 0,
     "exclusive": true,
     "gtk-layer-shell": false,
@@ -10,7 +10,7 @@
     "fixed-center": true,
     "modules-left": ["tray", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/todoist", "pulseaudio", "network", "backlight", "battery", "custom/power"],
+    "modules-right": ["custom/todoist", "hyprland/language" , "pulseaudio", "network", "backlight", "battery", "custom/power"],
 
     "tray": {
         "show-passive-items": true,
@@ -18,45 +18,50 @@
     },
 
     // waybar-hyprland-workspaces(5)
-     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": false,
-         "warp-on-scroll": false,
-         "show-special": false,
-         "all-outputs": false,
-         "active-only": false,
-         "move-to-monitor": false,
-         "sort-by": [],
-         "format": "{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-         },
-     },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "show-special": false,
+        "all-outputs": false,
+        "active-only": false,
+        "move-to-monitor": false,
+        "sort-by": [],
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+        },
+    },
+
+    "hyprland/language": {
+        "format": "  {shortDescription}-{short} {variant}",
+    },
 
     "battery": {
-        "adapter": "ADP0",
-        "interval": 1,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "max-length": 20,
-        "format": "{icon}{capacity}%",
-        "format-warning": "{icon}{capacity}%",
-        "format-critical": "{icon}{capacity}%",
-        "format-charging": "<span foreground='#26ff55'> {capacity} %</span>",
-        "format-plugged": "<span foreground='#26ff55'>  {capacity}%</span>",
-        "format-alt": "{icon} {time}",
-        "format-full": "<span foreground='#26ff55'> {capacity} %</span>",
-        "format-icons": [" ", " ", " ", " ", " "]
+       "adapter": "ADP0",
+       "interval": 1,
+       "states": {
+           "warning": 30,
+           "critical": 15
+       },
+       "max-length": 20,
+       "format": "{icon}{capacity}%",
+       "format-warning": "{icon}{capacity}%",
+       "format-critical": "{icon}{capacity}%",
+       "format-charging": "<span foreground='#26ff55'> {capacity} %</span>",
+       "format-plugged": "<span foreground='#26ff55'>  {capacity}%</span>",
+       "format-alt": "{icon} {time}",
+       "format-full": "<span foreground='#26ff55'> {capacity} %</span>",
+       "format-icons": [" ", " ", " ", " ", " "]
     },
 
     "clock": {
-        "format": "<span color='#ffffff'> </span>{:%I:%M %p}",
+        "interval": 1,
+        "format": "<span color='#ffffff'> </span>{:%a %b %d %H:%M:%S}",
         "format-alt": "<span color='#ffffff'> </span>{:%a %b %d}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
     },
