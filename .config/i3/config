@@ -317,6 +317,6 @@ exec asusctl --kbd-bright off
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 # tray icons
-exec gammastep-indicator
+#exec gammastep-indicator
 exec sleep 1; firewall-applet
 

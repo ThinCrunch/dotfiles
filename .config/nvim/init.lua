@@ -33,11 +33,13 @@ plugins = {'navarasu/onedark.nvim',
         'lukas-reineke/indent-blankline.nvim',
         'nvim-tree/nvim-tree.lua',
         'nvim-tree/nvim-web-devicons',
-        'SirVer/ultisnips',
         'lervag/vimtex',
         {'neoclide/coc.nvim', branch = 'release'},
         {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'}}
 
+--
+--:W:
+--::'SirVer/ultisnips',
 -- Plugin startup
 require("lazy").setup(plugins, opts)
 require("nvim-tree").setup()
