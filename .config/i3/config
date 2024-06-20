@@ -320,3 +320,6 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 #exec gammastep-indicator
 exec sleep 1; firewall-applet
 
+exec xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 75 --right-of eDP --set TearFree on
+exec xrandr --output eDP --mode 1920x1080 --rate 75
+
