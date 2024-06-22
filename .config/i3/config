@@ -230,7 +230,8 @@ bindsym $mod+Shift+semicolon exec i3lock -c 00000033 \
     --wrong-size=15 --insidewrong-color=00000000 --ringwrong-color=e75552ff --noinput-text=""
 
 # Wallpaper setting
-exec_always feh --bg-fill ~/Pictures/Wallpapers/wallhaven-8586my.png
+exec_always feh --bg-fill ~/Pictures/Wallpapers/firewatch_purple.png
+#exec_always feh --bg-fill ~/Pictures/Wallpapers/wallhaven-8586my.png
 #exec_always feh --bg-fill ~/Pictures/Wallpapers/alena-aenami-witcher-1k.jpg
 #exec_always feh --bg-fill ~/Pictures/Wallpapers/eclipse.png
 #exec_always feh --bg-fill ~/Pictures/Wallpapers/spookyscary.png
