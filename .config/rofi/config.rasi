@@ -150,7 +150,6 @@ configuration {
       sorting-method:    "name";
   }
 }
-/*@theme "/home/crisp/.local/share/rofi/themes/squared-material-red.rasi"*/
 
 @theme "spotlight-dark.rasi"
 
