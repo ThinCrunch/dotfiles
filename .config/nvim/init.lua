@@ -35,7 +35,16 @@ plugins = {'navarasu/onedark.nvim',
         'nvim-tree/nvim-web-devicons',
         'lervag/vimtex',
         {'neoclide/coc.nvim', branch = 'release'},
-        {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'}}
+        {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'},
+        {
+            'MeanderingProgrammer/markdown.nvim',
+            name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+            dependencies = { 'nvim-treesitter/nvim-treesitter' },
+            config = function()
+            require('render-markdown').setup({})
+            end,
+        }
+    }
 
 --
 --:W:
@@ -82,4 +91,5 @@ vim.keymap.set("n", "<C-q>", "<Cmd>BufferClose<CR>")
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 vim.keymap.set("i", "<S-Tab>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+vim.keymap.set("n", "<leader>r", "<Cmd>RenderMarkdownToggle<CR>")
 
