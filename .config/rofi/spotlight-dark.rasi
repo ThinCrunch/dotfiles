@@ -33,15 +33,9 @@ window {
 
 inputbar {
     font:       "Montserrat 12";
-    padding:    12px;
+    padding:    12px 24px;
     spacing:    12px;
-    children:   [ icon-search, entry ];
-}
-
-icon-search {
-    expand:     false;
-    filename:   "search";
-    size: 28px;
+    children:   [ entry ];
 }
 
 icon-search, entry, element-icon, element-text {
