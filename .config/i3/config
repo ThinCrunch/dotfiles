@@ -212,6 +212,9 @@ bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
 bindsym XF86KbdBrightnessDown exec asusctl --prev-kbd-bright
 bindsym XF86KbdBrightnessUp exec asusctl --next-kbd-bright
 
+# disable keyboard backlight on startup
+exec asusctl --kbd-bright off
+
 # Volume controls
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
@@ -312,9 +315,6 @@ exec --no-startup-id i3-msg 'workspace 2'
 # wmfocus
 bindsym $mod+question exec wmfocus
 
-# disable keyboard backlight on startup
-exec asusctl --kbd-bright off
-
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 # tray icons
@@ -324,3 +324,5 @@ exec sleep 1; firewall-applet
 exec xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 75 --right-of eDP --set TearFree on
 exec xrandr --output eDP --mode 1920x1080 --rate 75
 
+# charge limit
+exec asusctl --chg-limit 80
