@@ -34,6 +34,7 @@ plugins = {'navarasu/onedark.nvim',
         'nvim-tree/nvim-tree.lua',
         'nvim-tree/nvim-web-devicons',
         'lervag/vimtex',
+        'lewis6991/gitsigns.nvim',
         {'neoclide/coc.nvim', branch = 'release'},
         {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'},
         {
@@ -52,6 +53,7 @@ plugins = {'navarasu/onedark.nvim',
 -- Plugin startup
 require("lazy").setup(plugins, opts)
 require("nvim-tree").setup()
+require('gitsigns').setup()
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "python", "c_sharp", "c", "bash" },
   sync_install = false,
