@@ -82,6 +82,7 @@ vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
 vim.cmd("highlight EndOfBuffer ctermbg=NONE guibg=NONE")
 vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
 vim.cmd("highlight NvimTreeEndOfBuffer ctermbg=NONE guibg=NONE")
+vim.cmd("highlight SignColumn guibg=NONE")
 
 -- Keybinds
 ntree_api = require("nvim-tree.api")
