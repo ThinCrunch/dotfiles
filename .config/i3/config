@@ -254,7 +254,7 @@ exec xinput set-prop "ELAN1201:00 04F3:3098 Touchpad" "libinput Tapping Enabled"
 # Mouse settings
 exec_always xinput --set-prop "Cooler Master Technology Inc. MM711 Gaming Mouse" 'libinput Accel Speed' -0.8
 exec_always xinput --set-prop "Logitech Gaming Mouse G303" 'libinput Accel Speed' -0.8
-exec_always xinput --set-prop "pointer:Razer Razer Cobra" 'libinput Accel Speed' -0.6
+exec_always xinput --set-prop "pointer:Razer Razer Cobra" 'libinput Accel Speed' -0.1
 
 # Remove borders and titles
 for_window [class="^.*"] border pixel 0
