@@ -2,15 +2,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 PATH=$PATH:/home/$USER/.local/bin
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-
 export PROMPT="%F{blue}%n@%M%f %(5~|… /%3~|%~) > "
 
 # Set list of themes to pick from when loading at random
@@ -25,14 +16,6 @@ export PROMPT="%F{blue}%n@%M%f %(5~|… /%3~|%~) > "
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -68,22 +51,18 @@ export PROMPT="%F{blue}%n@%M%f %(5~|… /%3~|%~) > "
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-#
-plugins=(zsh-autosuggestions colored-man-pages)
-source $ZSH/oh-my-zsh.sh
+# Colored man pages
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANROFFOPT="-P -c"
 
 # User configuration
 
 # Colors for zsh syntax highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
-#ZSH_HIGHLIGHT_STYLES[alias]='none'
-#ZSH_HIGHLIGHT_STYLES[builtin]='none'
-#ZSH_HIGHLIGHT_STYLES[command]='none'
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[alias]='none'
+ZSH_HIGHLIGHT_STYLES[builtin]='none'
+ZSH_HIGHLIGHT_STYLES[command]='none'
 #ZSH_HIGHLIGHT_STYLES[precommand]='none'
 #ZSH_HIGHLIGHT_STYLES[autodirectory]='none'
 #ZSH_HIGHLIGHT_STYLES[arg0]='none'
@@ -94,21 +73,17 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-#export EDITOR=nvim
-#export BROWSER=firefox
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
 alias yep="~/Bash/tcr_control.sh"
-alias fuckthis="systemctl poweroff"
+alias fin.="systemctl poweroff"
 alias ssh="TERM=xterm ssh"
 alias dotgit="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+
+# Plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
