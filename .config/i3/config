@@ -233,7 +233,7 @@ bindsym $mod+Shift+semicolon exec i3lock -c 00000033 \
     --wrong-size=15 --insidewrong-color=00000000 --ringwrong-color=e75552ff --noinput-text=""
 
 # Wallpaper setting
-exec_always feh --bg-fill ~/Pictures/Wallpapers/bigsky-taxi.jpg
+exec_always feh --bg-fill ~/Pictures/Wallpapers/dark-waves.jpg
 
 # Compositor
 exec_always picom &
