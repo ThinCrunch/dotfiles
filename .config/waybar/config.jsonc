@@ -10,7 +10,7 @@
     "fixed-center": true,
     "modules-left": ["tray", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/todoist", "hyprland/language" , "pulseaudio", "network", "backlight", "battery", "custom/power"],
+    "modules-right": ["custom/todoist", "hyprland/language" , "network", "battery", "pulseaudio", "backlight", "custom/power"],
 
     "tray": {
         "show-passive-items": true,
