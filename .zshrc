@@ -126,6 +126,12 @@ alias dotgit="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
+# History settings
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+
 # Plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
