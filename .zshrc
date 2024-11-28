@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 PATH=$PATH:/home/$USER/.local/bin
 
-export PROMPT="%F{blue}%n@%M%f %(5~|… /%3~|%~) > "
+export PROMPT="%F{magenta}%n%f@%F{blue}%M%f %(5~|… /%3~|%~) > "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
