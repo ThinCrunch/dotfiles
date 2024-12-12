@@ -242,10 +242,7 @@ exec_always picom &
 exec_always i3-msg gaps inner all set 12
 
 # Touchpad
-# scrolling
-exec --no-startup-id synclient NaturalScrolling=0 VertScrollDelta=-113
-# tap to click
-exec xinput set-prop "ELAN1201:00 04F3:3098 Touchpad" "libinput Tapping Enabled" 1
+# in /etc/X11/xorg.conf.d/40-libinput.conf
 
 # Mouse settings
 exec_always xinput --set-prop "Cooler Master Technology Inc. MM711 Gaming Mouse" 'libinput Accel Speed' -0.8
@@ -318,8 +315,11 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 #exec gammastep-indicator
 exec sleep 1; firewall-applet
 
-exec xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 75 --right-of eDP --set TearFree on
-exec xrandr --output eDP --mode 1920x1080 --rate 75
+# Monitor settings
+# in /home/$USER/.xinitrc
 
-# charge limit
+# asusctl commands
 exec asusctl --chg-limit 80
+exec asusctl anime --enable-display false
+exec asusctl anime --enable-powersave-anim false
+
