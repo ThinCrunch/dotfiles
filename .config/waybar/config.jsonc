@@ -23,7 +23,6 @@
         "all-outputs": false,
         "warp-on-scroll": false,
         "show-special": false,
-        "all-outputs": false,
         "active-only": false,
         "move-to-monitor": false,
         "sort-by": [],
@@ -33,12 +32,12 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
-        },
+            "5": ""
+        }
     },
 
     "hyprland/language": {
-        "format": "  {shortDescription}-{short} {variant}",
+        "format": "  {shortDescription}-{short} {variant}"
     },
 
     "battery": {
@@ -121,7 +120,7 @@
     },
      "custom/todoist": {
          "interval": 60,
-         "exec": "python3 -u ~/Documents/Code/Python/todoist_bar_module/todoist_bar_module.py",
+         "exec": "python3 -u ~/Documents/Code/Python/todoist-bar-module/todoist-bar-module.py",
          "format": " {}",
          "on-click": "xdg-open https://www.todoist.com"
     }
