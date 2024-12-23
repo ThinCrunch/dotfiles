@@ -35,6 +35,7 @@ plugins = {'navarasu/onedark.nvim',
         'nvim-tree/nvim-web-devicons',
         'lervag/vimtex',
         'lewis6991/gitsigns.nvim',
+        'SirVer/ultisnips',
         {'neoclide/coc.nvim', branch = 'release'},
         {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'},
         {
@@ -68,6 +69,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Snippets
+-- snippets in /home/$USER/.config/nvim/UltiSnips/
 vim.g.UltiSnipsExpandTrigger = "<tab>"
 -- Set UltiSnips jump forward trigger to <c-b>
 vim.g.UltiSnipsJumpForwardTrigger = "<c-b>"
