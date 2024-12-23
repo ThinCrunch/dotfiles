@@ -233,7 +233,7 @@ bindsym $mod+Shift+semicolon exec i3lock -c 00000033 \
     --wrong-size=15 --insidewrong-color=00000000 --ringwrong-color=e75552ff --noinput-text=""
 
 # Wallpaper setting
-exec_always feh --bg-fill ~/Pictures/Wallpapers/dark-waves.jpg
+exec_always feh --bg-fill ~/Pictures/Wallpapers/aurora.jpg
 
 # Compositor
 exec_always picom &
@@ -246,7 +246,7 @@ exec_always i3-msg gaps inner all set 12
 
 # Mouse settings
 exec_always xinput --set-prop "Cooler Master Technology Inc. MM711 Gaming Mouse" 'libinput Accel Speed' -0.8
-exec_always xinput --set-prop "Logitech Gaming Mouse G303" 'libinput Accel Speed' -0.8
+exec_always xinput --set-prop "Logitech Gaming Mouse G303" 'libinput Accel Speed' -0.2
 exec_always xinput --set-prop "pointer:Razer Razer Cobra" 'libinput Accel Speed' -0.1
 
 # Remove borders and titles
