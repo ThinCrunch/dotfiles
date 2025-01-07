@@ -4,6 +4,7 @@
 vim.wo.number = true
 vim.opt.autochdir = true
 vim.opt.clipboard = "unnamedplus"
+vim.g.vimtex_view_method = 'zathura'
 
 -- 4 spaces instead of tab
 vim.opt.tabstop = 4
@@ -48,9 +49,6 @@ plugins = {'navarasu/onedark.nvim',
         }
     }
 
---
---:W:
---::'SirVer/ultisnips',
 -- Plugin startup
 require("lazy").setup(plugins, opts)
 require("nvim-tree").setup()
@@ -68,16 +66,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- Snippets
--- snippets in /home/$USER/.config/nvim/UltiSnips/
-vim.g.UltiSnipsExpandTrigger = "<tab>"
--- Set UltiSnips jump forward trigger to <c-b>
-vim.g.UltiSnipsJumpForwardTrigger = "<c-b>"
--- Set UltiSnips jump backward trigger to <c-z>
-vim.g.UltiSnipsJumpBackwardTrigger = "<c-z>"
-
-vim.g.vimtex_view_method = 'zathura'
-
 -- Colors
 require("onedark").load()
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
@@ -89,12 +77,21 @@ vim.cmd("highlight SignColumn guibg=NONE")
 -- Keybinds
 ntree_api = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>t", function() ntree_api.tree.toggle() end)
-vim.keymap.set("n", "<leader>m", function() os.execute("alacritty &") end)
+
+local open_code_term = "$TERM --class codeterm & sleep 0.2 && i3-msg '[class=\"codeterm\"] resize set width 650'"
+vim.keymap.set("n", "<leader>m", function() os.execute(open_code_term) end)
 vim.keymap.set("n", "<C-h>", "<Cmd>BufferPrevious<CR>")
 vim.keymap.set("n", "<C-l>", "<Cmd>BufferNext<CR>")
 vim.keymap.set("n", "<C-q>", "<Cmd>BufferClose<CR>")
+
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 vim.keymap.set("i", "<S-Tab>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 vim.keymap.set("n", "<leader>r", "<Cmd>RenderMarkdownToggle<CR>")
+
+-- Snippets
+-- snippets in /home/$USER/.config/nvim/UltiSnips/
+vim.g.UltiSnipsExpandTrigger = "<tab>"
+vim.g.UltiSnipsJumpForwardTrigger = "<c-b>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<c-z>"
 
