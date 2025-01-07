@@ -233,7 +233,7 @@ bindsym $mod+Shift+semicolon exec i3lock -c 00000033 \
     --wrong-size=15 --insidewrong-color=00000000 --ringwrong-color=e75552ff --noinput-text=""
 
 # Wallpaper setting
-exec_always feh --bg-fill ~/Pictures/Wallpapers/aurora.jpg
+exec_always feh --bg-fill ~/Pictures/Wallpapers/Winter/aurora.jpg
 
 # Compositor
 exec_always picom &
@@ -282,18 +282,22 @@ bindsym $mod+Shift+s exec flameshot gui
 # Updates notification
 exec_always arch-update --check
 
-# polkit
+# Polkit
 exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 
-# floating terminal
-exec --no-startup-id alacritty --class shell_scratch
-for_window [instance="shell_scratch"] move scratchpad
-#bindsym $mod+semicolon scratchpad show; move position center
-bindsym $mod+semicolon exec ~/Bash/scratchterm.sh shell_scratch;
+# Scratchpads
+# keep "_scratch" in the name to maintain compatiblity
+set $terminal_class shell_scratch
+set $files_class files_scratch
 
-exec --no-startup-id alacritty --class files_scratch -e ranger
-for_window [instance="files_scratch"] move scratchpad
-bindsym $mod+o exec ~/Bash/scratchterm.sh files_scratch "-e ranger";
+exec --no-startup-id alacritty --class $terminal_class
+exec --no-startup-id alacritty --class $files_class -e ranger
+
+for_window [instance="$terminal_class"] move scratchpad
+for_window [instance="$files_class"] move scratchpad
+
+bindsym $mod+semicolon exec ~/Bash/scratchterm.sh $terminal_class;
+bindsym $mod+o exec ~/Bash/scratchterm.sh $files_class "-e ranger";
 
 # game on/off
 bindsym $mod+F10 exec ~/Bash/game_open.sh
