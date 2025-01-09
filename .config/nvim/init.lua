@@ -37,6 +37,8 @@ plugins = {'navarasu/onedark.nvim',
         'lervag/vimtex',
         'lewis6991/gitsigns.nvim',
         'SirVer/ultisnips',
+        {'junegunn/fzf', ['do'] = 'fzf#install()' },
+        'junegunn/fzf.vim',
         {'neoclide/coc.nvim', branch = 'release'},
         {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'},
         {
@@ -88,6 +90,8 @@ local opts = {silent = true, noremap = true, expr = true, replace_keycodes = fal
 vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 vim.keymap.set("i", "<S-Tab>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 vim.keymap.set("n", "<leader>r", "<Cmd>RenderMarkdownToggle<CR>")
+
+vim.keymap.set("n", "<leader>f", "<Cmd>Files<CR>")
 
 -- Snippets
 -- snippets in /home/$USER/.config/nvim/UltiSnips/
