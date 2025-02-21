@@ -6,6 +6,10 @@ vim.opt.autochdir = true
 vim.opt.clipboard = "unnamedplus"
 vim.g.vimtex_view_method = 'zathura'
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
+
 -- 4 spaces instead of tab
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
