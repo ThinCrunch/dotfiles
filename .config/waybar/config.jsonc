@@ -10,7 +10,7 @@
     "fixed-center": true,
     "modules-left": ["tray", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/todoist", "hyprland/language" , "network", "battery", "pulseaudio", "backlight", "custom/power"],
+    "modules-right": ["custom/todoist", "hyprland/language" , "network", "power-profiles-daemon", "battery", "pulseaudio", "backlight", "custom/power"],
 
     "tray": {
         "show-passive-items": true,
@@ -28,10 +28,10 @@
         "sort-by": [],
         "format": "{icon}",
         "format-icons": {
-            "1": "",
+            "1": "",
             "2": "",
-            "3": "",
-            "4": "",
+            "3": "",
+            "4": "",
             "5": ""
         }
     },
@@ -48,7 +48,7 @@
            "critical": 15
        },
        "max-length": 20,
-       "format": "{icon}{capacity}%",
+       "format": "{icon}{capacity}% ({power:4.2f}W)",
        "format-warning": "{icon}{capacity}%",
        "format-critical": "{icon}{capacity}%",
        "format-charging": "<span foreground='#26ff55'> {capacity} %</span>",
@@ -78,7 +78,8 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "󰈁{ipaddr}/{cidr}  ",
+        //"format-ethernet": "󰈁{ipaddr}/{cidr}  ",
+        "format-ethernet": "󰈁 {ifname}",
         "tooltip-format": "{ifname} via {gwaddr}  ",
         "format-linked": "NET {ifname} (No IP)  ",
         "format-disconnected": "Disconnected",
@@ -97,12 +98,23 @@
             "car": "",
             "default": [" ", " ", " "]
             },
-        "on-click": "pavucontrol"
+        "on-click": "pamixer --toggle-mute"
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon}  {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+         "format": "{icon}  {profile}",
+         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+         "tooltip": true,
+         "format-icons": {
+             "default": "",
+             "performance": "",
+             "balanced": "",
+             "power-saver": ""
+        }
     },
     "custom/logo": {
         "format": "",
@@ -120,7 +132,7 @@
     },
      "custom/todoist": {
          "interval": 60,
-         "exec": "python3 -u ~/Documents/Code/Python/todoist-bar-module/todoist-bar-module.py",
+         "exec": "python3 -u ~/Code/Python/todoist-bar-module/todoist-bar-module.py",
          "format": " {}",
          "on-click": "xdg-open https://www.todoist.com"
     }

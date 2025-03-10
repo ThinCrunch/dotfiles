@@ -12,7 +12,7 @@ window#waybar {
   transition-duration: 0.5s;
   /* background-color: #1e1e2e; */
   /* background-color: #181825; */
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 window#waybar.hidden {
@@ -65,6 +65,7 @@ window#waybar.hidden {
 #memory,
 #backlight,
 #network,
+#power-profiles-daemon,
 #language,
 #custom-todoist,
 #custom-power,
@@ -122,6 +123,14 @@ window#waybar.empty #window {
 
 #pulseaudio.muted {
   color: #ff5b45;
+}
+
+#power-profiles-daemon.balanced {
+  color: #00dd00;
+}
+
+#power-profiles-daemon.performance {
+  color: #eeee00;
 }
 
 tooltip {
