@@ -41,6 +41,7 @@ plugins = {'navarasu/onedark.nvim',
         'lervag/vimtex',
         'lewis6991/gitsigns.nvim',
         'SirVer/ultisnips',
+        { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
         {'junegunn/fzf', ['do'] = 'fzf#install()' },
         'junegunn/fzf.vim',
         {'neoclide/coc.nvim', branch = 'release'},
@@ -73,22 +74,37 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Colors
-require("onedark").load()
-vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
-vim.cmd("highlight EndOfBuffer ctermbg=NONE guibg=NONE")
-vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
-vim.cmd("highlight NvimTreeEndOfBuffer ctermbg=NONE guibg=NONE")
-vim.cmd("highlight SignColumn guibg=NONE")
+-- require("onedark").load()
+vim.cmd.colorscheme("catppuccin")
+vim.api.nvim_set_hl(0, "Normal", { bg=nil })
+vim.api.nvim_set_hl(0, "NormalNC", { bg=nil })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg=nil })
+vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg=nil })
+vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg=nil })
+vim.api.nvim_set_hl(0, "SignColumn", { bg=nil })
+vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { bg=nil })
+
+if vim.g.colors_name == "catppuccin-mocha" then
+    vim.api.nvim_set_hl(0, "LineNr", { fg="#9399b2" })
+    vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg="#181825" })
+end
 
 -- Keybinds
 ntree_api = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>t", function() ntree_api.tree.toggle() end)
 
-local open_code_term = "$TERM --class codeterm & sleep 0.2 && i3-msg '[class=\"codeterm\"] resize set width 650'"
+local open_code_term;
+local session_type = os.getenv("XDG_SESSION_TYPE")
+local current_desktop = os.getenv("XDG_CURRENT_DESKTOP")
+if session_type == "x11" then
+    open_code_term = "$TERM --class codeterm & sleep 0.2 && i3-msg '[class=\"codeterm\"] resize set width 650'"
+elseif current_desktop == "Hyprland" then
+    open_code_term = "$TERMCMD"
+end
 vim.keymap.set("n", "<leader>m", function() os.execute(open_code_term) end)
 vim.keymap.set("n", "<C-h>", "<Cmd>BufferPrevious<CR>")
 vim.keymap.set("n", "<C-l>", "<Cmd>BufferNext<CR>")
-vim.keymap.set("n", "<C-q>", "<Cmd>BufferClose<CR>")
+vim.keymap.set("n", "<A-q>", "<Cmd>BufferClose<CR>")
 
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)

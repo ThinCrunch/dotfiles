@@ -110,6 +110,10 @@ ZSH_HIGHLIGHT_STYLES[command]='none'
 #ZSH_HIGHLIGHT_STYLES[arg0]='none'
 #ZSH_HIGHLIGHT_STYLES[default]='none'
 
+# Color for autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666677"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -123,8 +127,12 @@ alias yep="~/Bash/tcr_control.sh"
 alias fin.="systemctl poweroff"
 alias ssh="TERM=xterm ssh"
 alias dotgit="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias dotlazygit="lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias yays="~/Bash/system-updater.sh"
+alias open-webuip="systemctl start ollama && workon open-webui && open-webui serve && deactivate && systemctl stop ollama"
+alias neofetch="fastfetch"
 
 # History settings
 HISTFILE=~/.zsh_history
@@ -134,3 +142,10 @@ SAVEHIST=$HISTSIZE
 # Plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Virtualenvwrapper, python-virtualenvwrapper package
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+
+# k3s
+export KUBECONFIG=~/.kube/config

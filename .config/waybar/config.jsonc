@@ -86,6 +86,7 @@
         "format-alt": "NET {ifname}: {ipaddr}/{cidr}"
     },
 
+    // waybar-pulseaudio(5)
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "  muted",
@@ -98,7 +99,8 @@
             "car": "",
             "default": [" ", " ", " "]
             },
-        "on-click": "pamixer --toggle-mute"
+        "on-click": "pamixer --toggle-mute",
+        "scroll-step": 2
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -116,11 +118,6 @@
              "power-saver": ""
         }
     },
-    "custom/logo": {
-        "format": "",
-        "tooltip": false
-    },
-
     "custom/sep": {
         "format": "|",
         "tooltip": false
