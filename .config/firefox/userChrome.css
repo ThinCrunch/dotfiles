@@ -1,0 +1,66 @@
+:root {
+  --dark-bg: rgba(25, 24, 30, 1);
+  --transparent-white: rgba(255, 255, 255, 0.1);
+  --transparent-black: rgba(0, 0, 0, 0.6);
+}
+
+html, html > *, html > * > *, .browser-toolbar  {
+  border: none !important;
+  -moz-appearance: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+findbar,
+.titlebar-color,
+.browser-toolbar {
+  background: var(--transparent-black) !important;  
+}
+
+.tab-background[selected],
+.tab-background[multiselected] {
+  background: var(--transparent-white) !important;
+}
+
+#TabsToolbar:-moz-window-inactive {
+  opacity: 1 !important;
+}
+
+#urlbar {
+  --toolbar-field-background-color: rgba(255, 255, 255, 0.1) !important;
+  --toolbar-field-focus-background-color: var(--dark-bg) !important;
+}
+
+#urlbar-zoom-button {
+  background-color: var(--transparent-white) !important;
+}
+
+#appMenu-popup,
+#downloadsPanel,
+#customizationui-widget-panel,
+#widget-overflow-list,
+#editBookmarkPanel,
+#protections-popup,
+#identity-popup,
+#tab-preview-panel,
+#unified-extensions-panel,
+.panel-arrowbox {
+    --arrowpanel-background: var(--dark-bg) !important;
+    --panel-background: var(--dark-bg) !important;
+}
+
+tooltip {
+  background-color: var(--dark-bg) !important;
+}
+
+.searchmode-switcher, .searchmode-switcher-chicklet {
+  background-color: var(--transparent-white) !important;
+}
+
+.toolbarbutton-badge{
+  background-color: var(--transparent-white) !important;
+}
+
+menupopup {
+  --panel-background: var(--dark-bg) !important;
+}
