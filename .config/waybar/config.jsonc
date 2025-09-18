@@ -49,18 +49,18 @@
        },
        "max-length": 20,
        "format": "{icon}{capacity}% ({power:4.2f}W)",
-       "format-warning": "{icon}{capacity}%",
-       "format-critical": "{icon}{capacity}%",
-       "format-charging": "<span foreground='#26ff55'> {capacity} %</span>",
+       "format-warning": "<span foreground='#ffff26'>  {capacity}%</span>",
+       "format-critical": "<span foreground='#ff2655'>  {capacity}%</span>",
+       "format-charging": "<span foreground='#26ff55'>  {capacity}%</span>",
        "format-plugged": "<span foreground='#26ff55'>  {capacity}%</span>",
        "format-alt": "{icon} {time}",
-       "format-full": "<span foreground='#26ff55'> {capacity} %</span>",
-       "format-icons": [" ", " ", " ", " ", " "]
+       "format-full": "<span foreground='#26ff55'> {capacity}%</span>",
+       "format-icons": ["   ", "   ", "   ", "   ", "   "]
     },
 
     "clock": {
         "interval": 1,
-        "format": "<span color='#ffffff'> </span>{:%a %b %d %H:%M:%S}",
+        "format": "<span color='#ffffff'>   </span>{:%a %b %d %H:%M:%S}",
         "format-alt": "<span color='#ffffff'> </span>{:%a %b %d}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
     },
