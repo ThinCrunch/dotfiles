@@ -133,6 +133,7 @@ alias grep="grep --color=auto"
 alias yays="~/Bash/system-updater.sh"
 alias open-webuip="systemctl start ollama && workon open-webui && open-webui serve && deactivate && systemctl stop ollama"
 alias neofetch="fastfetch"
+alias sponge='cat > /tmp/sponge && mv /tmp/sponge'
 
 # History settings
 HISTFILE=~/.zsh_history
