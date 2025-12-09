@@ -118,6 +118,24 @@
              "power-saver": ""
         }
     },
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{player_icon}{status_icon} {artist} - {title}",
+        "tooltip-format": "{player}: {dynamic}",
+        "max-length": 40,
+        "player-icons": {
+            "default": "  ",
+            "mpv": "  ",
+            "spotify": " ",
+            "firefox": " "
+        },
+        "status-icons": {
+            "playing": "󰐍 ",
+            "paused": "󰏦 ",
+            "stopped": "󰙧 ",
+            "default": "default"
+        }
+    },
     "custom/sep": {
         "format": "|",
         "tooltip": false
