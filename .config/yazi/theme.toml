@@ -1,0 +1,3 @@
+[mgr]
+preview_hovered = { reversed = true }
+border_symbol = " "
