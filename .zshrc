@@ -128,12 +128,14 @@ alias fin.="systemctl poweroff"
 alias ssh="TERM=xterm ssh"
 alias dotgit="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias dotlazygit="lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias ls="ls --color=auto"
+alias ls="ls --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias yays="~/Bash/system-updater.sh"
 alias open-webuip="systemctl start ollama && workon open-webui && open-webui serve && deactivate && systemctl stop ollama"
 alias neofetch="fastfetch"
 alias sponge='cat > /tmp/sponge && mv /tmp/sponge'
+alias cw="~/Bash/change_wallpaper.sh"
+alias Hyprland='echo USE "start-hyprland" INSTEAD!!!!!!!!!!'
 
 # History settings
 HISTFILE=~/.zsh_history

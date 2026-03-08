@@ -1,7 +1,8 @@
 configuration {
 /*	modes: "drun,calc,window,run,ssh";*/
 	modes: "drun,window,run,ssh";
-/*	font: "mono 12";*/
+/*  font:   "Montserrat 12"; */
+	font: "Fantasque Sans Mono 13";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -85,7 +86,7 @@ configuration {
 /*	kb-accept-custom-alt: "Control+Shift+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
-/*	kb-mode-next: "Shift+Right,Control+Tab";*/
+	kb-mode-next: "Shift+Right,Control+Tab";
 /*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
 /*	kb-mode-complete: "Control+l";*/
 /*	kb-row-left: "Control+Page_Up";*/
@@ -152,8 +153,3 @@ configuration {
 }
 
 @theme "spotlight-dark.rasi"
-
-* {
-    /*accent-color: #167cd0;*/
-    accent-color: #ddddff55;
-}

@@ -1,16 +1,27 @@
+@import 'colors.css';
+
 * {
   min-height: 0;
-  font-family: Noto Sans;
-  font-size: 11px;
+  font-family: "Fantasque Sans Mono";
+  font-size: 13px;
   font-weight: 900;
 }
 
 window#waybar {
+  padding: 0px 8px;
+  margin: 5px 4px 5px 4px;
+  border-radius: 5px;
+  background-color: @bg;
   transition-property: background-color;
   transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modules-left {
+    padding-left: 5px;
+}
+
+.modules-right {
+    padding-right: 5px;
 }
 
 window#waybar.hidden {
@@ -18,41 +29,41 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background: rgba(255, 255, 255, 0.2);
+  background: @bg_module;
+  color: @fg;
   margin: 2px 1px 3px 1px;
   padding: 0px 0px;
   margin: 5px 5px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 0px;
   font-style: normal;
   opacity: 0.8;
   font-size: 16px;
-  color: #ffffff;
 }
 
 #workspaces button {
   padding: 1px 1px;
   margin: 3px 3px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 0px;
-  color: #fff;
+  color: @fg;
   /* background-color: #1e1e1e; */
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: #000;
-  background: #fff;
-  border-radius: 15px;
+  color: @fg_selected;
+  background: @fg;
+  border-radius: 3px;
   min-width: 40px;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.urgent {
-  background-color: #ff441f;
+  background-color: @alert-high;
 }
 
 #clock,
@@ -66,15 +77,19 @@ window#waybar.hidden {
 #power-profiles-daemon,
 #language,
 #mpris,
+#cpu,
+#memory,
+#clock,
 #custom-todoist,
 #custom-power,
 #window {
   padding: 0px 8px;
   margin: 6px 3px;
-  color: #e5e5e5;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.1); /*#1e1e1e;*/
+  color: @fg;
+  border-radius: 5px;
+  background-color: @bg_module;
 }
+
 #custom-logo {
   padding: 0px 10px;
 }
@@ -83,55 +98,30 @@ window#waybar.hidden {
   font-size: 10px;
 }
 
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
-}
-
-#custom-spotify.playing {
-  color: #a6e3a1;
+#tray menu {
+    background: @bg_solid;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 window#waybar.empty #window {
   background-color: transparent;
 }
 
-#cpu {
-  color: #94e2d5;
-}
-
-#memory {
-  color: #cba6f7;
-}
-
-#clock {
-  color: #e3e3e3;
-}
-
-#clock.date {
-  color: #e3e3e3;
-}
-
-#window {
-  color: #a6e3a1;
-}
-
-#pulseaudio {
-  color: #fff;
-}
-
 #pulseaudio.muted {
-  color: #ff5b45;
+  color: @alert-high;
 }
 
 #power-profiles-daemon.balanced {
-  color: #00dd00;
+  color: @alert-medium;
 }
 
 #power-profiles-daemon.performance {
-  color: #eeee00;
+  color: @alert-high;
 }
 
 tooltip {
-  border-radius: 8px;
+  border-radius: 5px;
+  background-color: @bg;
 }
+

@@ -1,0 +1,6 @@
+set clipboard+=unnamed,unnamedplus
+set clipboard+=ideaput
+set NERDTree
+
+nmap <S-C-h> :tabm-1 <CR>
+nmap <S-C-l> :tabm+1 <CR>

@@ -1,9 +1,11 @@
-:root {
-  --dark-bg: rgba(25, 24, 30, 1);
-  --transparent-white: rgba(255, 255, 255, 0.1);
-  --transparent-black: rgba(0, 0, 0, 0.6);
-}
+@import url("colors.css");
 
+:root {
+  --color-accent-primary: var(--accent-color) !important;
+  --arrowpanel-background: var(--dark-bg) !important;
+  --toolbarbutton-icon-fill-attention: var(--accent-color) !important;
+}
+  
 html, html > *, html > * > *, .browser-toolbar  {
   border: none !important;
   -moz-appearance: none !important;
@@ -27,26 +29,13 @@ findbar,
 }
 
 #urlbar {
-  --toolbar-field-background-color: rgba(255, 255, 255, 0.1) !important;
+  --toolbar-field-background-color: var(--transparent-white) !important;
   --toolbar-field-focus-background-color: var(--dark-bg) !important;
+  --urlbarView-highlight-background: var(--accent-color) !important;
 }
 
-#urlbar-zoom-button {
-  background-color: var(--transparent-white) !important;
-}
-
-#appMenu-popup,
-#downloadsPanel,
-#customizationui-widget-panel,
-#widget-overflow-list,
-#editBookmarkPanel,
-#protections-popup,
-#identity-popup,
-#tab-preview-panel,
-#unified-extensions-panel,
-.panel-arrowbox {
-    --arrowpanel-background: var(--dark-bg) !important;
-    --panel-background: var(--dark-bg) !important;
+.urlbarView-url {
+  color: var(--accent-color) !important;
 }
 
 tooltip {

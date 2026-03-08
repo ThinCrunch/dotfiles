@@ -2,16 +2,18 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
+    "height": 32,
     "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 200,
+    "margin-right": 200,
     "exclusive": true,
     "gtk-layer-shell": false,
     "passthrough": false,
     "fixed-center": true,
     "modules-left": ["tray", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/todoist", "hyprland/language" , "network", "power-profiles-daemon", "battery", "pulseaudio", "backlight", "custom/power"],
-
+    "modules-right": ["custom/todoist", "hyprland/language" , "network", "battery", "pulseaudio", "backlight", "power-profiles-daemon", "custom/power"],
     "tray": {
         "show-passive-items": true,
         "spacing": 10
@@ -37,7 +39,7 @@
     },
 
     "hyprland/language": {
-        "format": "   {shortDescription}-{short} {variant}"
+        "format": "  {shortDescription}-{short} {variant}"
     },
 
     "battery": {
@@ -48,36 +50,38 @@
            "critical": 15
        },
        "max-length": 20,
-       "format": "{icon}{capacity}% ({power:4.2f}W)",
-       "format-warning": "<span foreground='#ffff26'>  {capacity}%</span>",
-       "format-critical": "<span foreground='#ff2655'>  {capacity}%</span>",
-       "format-charging": "<span foreground='#26ff55'>  {capacity}%</span>",
-       "format-plugged": "<span foreground='#26ff55'>  {capacity}%</span>",
+       "format": "{icon} {capacity}({power:.1f})",
+       "format-warning": "<span foreground='#ffff26'> {capacity}</span>",
+       "format-critical": "<span foreground='#ff2655'> {capacity}</span>",
+       "format-charging": "<span foreground='#26ff55'> {capacity}</span>",
+       "format-plugged": "<span foreground='#26ff55'> {capacity}</span>",
        "format-alt": "{icon} {time}",
        "format-full": "<span foreground='#26ff55'> {capacity}%</span>",
-       "format-icons": ["   ", "   ", "   ", "   ", "   "]
+       "format-icons": [" ", " ", " ", " ", " "],
+       "full-at": 78,
+       "design-capacity": true
     },
 
     "clock": {
         "interval": 1,
-        "format": "<span color='#ffffff'>   </span>{:%a %b %d %H:%M:%S}",
-        "format-alt": "<span color='#ffffff'> </span>{:%a %b %d}",
+        "format": "  {:%a %b %d %H:%M:%S}",
+        "format-alt": " {:%a %b %d}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "cpu": {
-        "format": "  {usage}%",
+        "format": " {usage}%",
         "tooltip": true,
         "interval": 1
     },
 
     "memory": {
-        "format": "  {used:0.2f}G"
+        "format": " {used:0.2f}G"
     },
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-wifi": " {essid}({signalStrength})",
         //"format-ethernet": "󰈁{ipaddr}/{cidr}  ",
         "format-ethernet": "󰈁 {ifname}",
         "tooltip-format": "{ifname} via {gwaddr}  ",
@@ -88,7 +92,7 @@
 
     // waybar-pulseaudio(5)
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}",
         "format-muted": "  muted",
         "format-icons": {
             "headphone": " ",
@@ -104,18 +108,18 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{icon}  {percent}%",
+        "format": "{icon} {percent}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "power-profiles-daemon": {
-         "format": "{icon}   {profile}",
+         "format": "{icon}",
          "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
          "tooltip": true,
          "format-icons": {
-             "default": "",
-             "performance": "",
-             "balanced": "",
-             "power-saver": ""
+             "default": " ",
+             "performance": " ",
+             "balanced": " ",
+             "power-saver": " "
         }
     },
     "mpris": {
@@ -136,19 +140,15 @@
             "default": "default"
         }
     },
-    "custom/sep": {
-        "format": "|",
-        "tooltip": false
-    },
     "custom/power": {
         "tooltip": false,
-        "on-click": "wlogout -p layer-shell &",
+        "on-click": "rofi -show p -modes 'p:~/Bash/rofi-power.sh'",
         "format": " "
     },
      "custom/todoist": {
          "interval": 60,
          "exec": "python3 -u ~/Code/Python/todoist-bar-module/todoist-bar-module.py",
-         "format": "  {}",
+         "format": " {}",
          "on-click": "xdg-open https://www.todoist.com"
     }
 }
