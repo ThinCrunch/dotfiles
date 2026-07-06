@@ -8,6 +8,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 
+vim.diagnostic.config({virtual_lines=false})
+
 -- 4 spaces instead of tab
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -46,10 +48,12 @@ vim.keymap.set("n", "<C-l>",     "<Cmd>BufferNext<CR>")
 vim.keymap.set("n", "<S-C-l>",   "<Cmd>BufferMoveNext<CR>")
 vim.keymap.set("n", "<A-q>",     "<Cmd>BufferClose<CR>")
 
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
---vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
---vim.keymap.set("i", "<S-Tab>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 vim.keymap.set("n", "<leader>r", "<Cmd>RenderMarkdownToggle<CR>")
-
 vim.keymap.set("n", "<leader>f", "<Cmd>Files<CR>")
 
+-- Autocmd
+vim.opt.updatetime = 750
+vim.opt.swapfile = false
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function() vim.diagnostic.open_float() end
+})

@@ -5,4 +5,7 @@
 vim.lsp.enable('pyright')  -- Python
 vim.lsp.enable('lua_ls')   -- Lua
 vim.lsp.enable('bashls')   -- Bash
+vim.lsp.enable('clangd')   -- C
+
 vim.lsp.enable('qmlls')    -- Quickshell
+vim.lsp.config('qmlls', { cmd = {'qmlls6'} })

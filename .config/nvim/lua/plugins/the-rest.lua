@@ -1,5 +1,4 @@
 return {
-    'neovim/nvim-lspconfig',
     'romgrk/barbar.nvim',
     'lewis6991/gitsigns.nvim',
     'jiangmiao/auto-pairs',
