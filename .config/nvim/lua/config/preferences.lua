@@ -17,7 +17,7 @@ vim.opt.expandtab = true
 vim.opt.smarttab = true
 
 -- Colors
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("catppuccin-mocha")
 vim.api.nvim_set_hl(0, "Normal", { bg=nil })
 vim.api.nvim_set_hl(0, "NormalNC", { bg=nil })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg=nil })
