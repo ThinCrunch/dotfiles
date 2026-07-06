@@ -123,7 +123,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666677"
 # export ARCHFLAGS="-arch x86_64"
 #
 # Aliases
-alias yep="~/Bash/tcr_control.sh"
+alias yep="~/Bash/tcr-control.sh"
 alias fin.="systemctl poweroff"
 alias ssh="TERM=xterm ssh"
 alias dotgit="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
