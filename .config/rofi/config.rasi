@@ -2,7 +2,7 @@ configuration {
 /*	modes: "drun,calc,window,run,ssh";*/
 	modes: "drun,window,run,ssh";
 /*  font:   "Montserrat 12"; */
-	font: "Fantasque Sans Mono 13";
+	font: "FantasqueSansM Nerd Font 13";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
