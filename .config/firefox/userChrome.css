@@ -32,10 +32,13 @@ findbar,
   --toolbar-field-background-color: var(--transparent-white) !important;
   --toolbar-field-focus-background-color: var(--dark-bg) !important;
   --urlbarView-highlight-background: var(--accent-color) !important;
+  --urlbarview-background-color-selected: var(--accent-color) !important;
+  --link-color: var(--accent-color) !important;
+  --color-accent-primary: var(--accent-color) !important;
 }
 
-.urlbarView-url {
-  color: var(--accent-color) !important;
+#urlbar-input::selection {
+    background-color: var(--accent-color) !important;
 }
 
 tooltip {
@@ -53,3 +56,4 @@ tooltip {
 menupopup {
   --panel-background: var(--dark-bg) !important;
 }
+
