@@ -53,8 +53,3 @@ vim.keymap.set("n", "<leader>r", "<Cmd>RenderMarkdownToggle<CR>")
 
 vim.keymap.set("n", "<leader>f", "<Cmd>Files<CR>")
 
--- Snippets
--- snippets in /home/$USER/.config/nvim/UltiSnips/
-vim.g.UltiSnipsExpandTrigger = "<tab>"
-vim.g.UltiSnipsJumpForwardTrigger = "<c-b>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<c-z>"

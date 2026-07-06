@@ -7,7 +7,6 @@ return {
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
     'lervag/vimtex',
-    'SirVer/ultisnips',
     {'junegunn/fzf', ['do'] = 'fzf#install()' },
     'junegunn/fzf.vim',
     {'nvim-treesitter/nvim-treesitter', ['do'] = ':TSUpdate'},
