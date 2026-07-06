@@ -136,6 +136,7 @@ alias neofetch="fastfetch"
 alias sponge='cat > /tmp/sponge && mv /tmp/sponge'
 alias cw="~/Bash/change_wallpaper.sh"
 alias Hyprland='echo USE "start-hyprland" INSTEAD!!!!!!!!!!'
+alias pacman-browse="pacman -Qq | fzf --preview 'pacman -Qi {}; pactree -r {}' --layout=reverse --bind 'enter:execute({pacman -Qi {}; pactree -r {}} | less)'"
 
 # History settings
 HISTFILE=~/.zsh_history
