@@ -150,6 +150,3 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Virtualenvwrapper, python-virtualenvwrapper package
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
-
-# k3s
-export KUBECONFIG=~/.kube/config
