@@ -1,0 +1,20 @@
+/*
+@define-color bg rgba(0, 0, 0, 0.6);
+@define-color bg_module rgba(200, 200, 200, 0.2);
+@define-color fg rgba(230, 230, 230, 1);
+@define-color fg_selected rgba(0, 0, 0, 1);
+
+@define-color alert-high #ff441f;
+@define-color alert-medium #ff9800;
+*/
+
+@define-color bg alpha({{background | darken(0.7)}}, 0.65);
+@define-color bg_module alpha({{background | lighten(0.7)}}, 0.2);
+@define-color bg_solid {{background | darken(0.7)}};
+@define-color fg alpha({{foreground}}, 1);
+@define-color fg_selected alpha({{background}}, 1);
+
+@define-color alert-high {{color1}};
+@define-color alert-medium {{color3}};
+
+@define-color accent {{color12}};

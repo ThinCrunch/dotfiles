@@ -1,0 +1,19 @@
+/*
+* {
+    bg: #00000099;
+    fg: #FFFFFFFF;
+    bg-border: #FFFFFF38;
+
+    bg-selected: #FFFFFFFF;
+    fg-selected: #000000FF;
+}
+*/
+
+* {
+    bg: {{background | darken(0.7)}}A6;
+    fg: {{foreground}}FF;
+    bg-border: {{color12}}38;
+
+    bg-selected: {{color12}}FF;
+    fg-selected: {{background | darken(0.5)}}FF;
+}

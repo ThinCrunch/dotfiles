@@ -1,0 +1,6 @@
+:root {
+  --transparent-white: {{foreground}}1A;
+  --transparent-black: {{background | darken(0.7)}}A6;
+  --dark-bg: {{background}};
+  --accent-color: {{color12}};
+}

@@ -1,0 +1,30 @@
+# Wallust configuration file
+
+backend = 'kmeans'
+colorspace = 'labmixed'
+
+palette = 'dark'
+
+check_contrast = true
+threshold = 11
+
+[templates]
+waybar.template = 'colors-waybar.css'
+waybar.target = '~/.config/waybar/colors.css'
+
+rofi.template = 'colors-rofi.rasi'
+rofi.target = '~/.config/rofi/colors.rasi'
+
+hyprland.template = 'colors-hyprland.conf'
+hyprland.target = '~/.config/hypr/colors.conf'
+
+alacritty.template = 'colors-alacritty.toml'
+alacritty.target = '~/.config/alacritty/colors.toml'
+
+wezterm.template = 'colors-wezterm.lua'
+wezterm.target = '~/.config/wezterm/colors.lua'
+
+firefox-de.template = 'colors-firefox-de.css'
+firefox-de.target = '~/.config/firefox/colors.css'
+
+# TODO: (neovim), firefox-de, ranger/yazi, dunst
