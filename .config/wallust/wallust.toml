@@ -15,8 +15,11 @@ waybar.target = '~/.config/waybar/colors.css'
 rofi.template = 'colors-rofi.rasi'
 rofi.target = '~/.config/rofi/colors.rasi'
 
-hyprland.template = 'colors-hyprland.conf'
-hyprland.target = '~/.config/hypr/colors.conf'
+hyprland.template = 'colors-hyprland.lua'
+hyprland.target = '~/.config/hypr/colors.lua'
+
+hyprland_legacy.template = 'colors-hyprland.conf'
+hyprland_legacy.target = '~/.config/hypr/colors.conf'
 
 alacritty.template = 'colors-alacritty.toml'
 alacritty.target = '~/.config/alacritty/colors.toml'
