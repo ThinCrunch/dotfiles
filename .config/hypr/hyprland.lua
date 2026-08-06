@@ -211,7 +211,7 @@ hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("powerprofilesctl set power-saver")
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("slurp | grim -g - - | wl-copy"))
 
 -- Paste image from clipboard
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/Bash/clipdrop.sh"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/Bash/clipdrop.sh"))
 
 -- Laptop keyboard functionality
 hl.bind("XF86KbdBrightnessUp",   hl.dsp.exec_cmd("asusctl leds set next"))
