@@ -214,8 +214,8 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("slurp | grim -g - - | wl-cop
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/Bash/clipdrop.sh"))
 
 -- Laptop keyboard functionality
-hl.bind("XF86KbdBrightnessUp",   hl.dsp.exec_cmd("asusctl leds set next"))
-hl.bind("XF86KbdBrightnessDown", hl.dsp.exec_cmd("asusctl leds set prev"))
+hl.bind("XF86KbdBrightnessUp",   hl.dsp.exec_cmd("asusctl leds next"))
+hl.bind("XF86KbdBrightnessDown", hl.dsp.exec_cmd("asusctl leds prev"))
 
 hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("pamixer --increase 5"))
 hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("pamixer --decrease 5"))
@@ -227,6 +227,9 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"))
 -- Scratchpads
 hl.bind(mainMod .. " + SEMICOLON", hl.dsp.exec_cmd("pypr toggle term"))
 hl.bind(mainMod .. " + O",         hl.dsp.exec_cmd("pypr toggle files"))
+
+-- ohnePixel signature bind
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("wl-copy https://steamcommunity.com/id/thincrunch/"))
 
 -- }}}
 
