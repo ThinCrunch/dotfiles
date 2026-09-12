@@ -268,7 +268,7 @@ hl.on("hyprland.start", function ()
 
     -- Actions
     hl.exec_cmd("sleep 2 && ~/Bash/notify-updates.sh")
-    hl.exec_cmd("asusctl -c 80")
+    hl.exec_cmd("asusctl battery limit 80")
     hl.exec_cmd("setcursor elementary 24")
 end)
 
