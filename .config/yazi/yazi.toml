@@ -32,8 +32,8 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = '$TERMCMD ${EDITOR:-vi} "$@"', desc = "Default terminal with $EDITOR", for = "unix" },
-    { run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true,   for = "unix" },
-	{ run = 'code %*',    orphan = true, desc = "code",             for = "windows" },
-	{ run = 'code -w %*', block = true,  desc = "code (block)",     for = "windows" },
+	{ run = '$TERMCMD ${EDITOR:-vi} %s', desc = "Default terminal with $EDITOR", for = "unix" },
+    { run = '${EDITOR:-vi} %s',          desc = "$EDITOR", block = true,         for = "unix" },
+	{ run = 'code %s',    orphan = true, desc = "code",             for = "windows" },
+	{ run = 'code -w %s', block = true,  desc = "code (block)",     for = "windows" },
 ]
